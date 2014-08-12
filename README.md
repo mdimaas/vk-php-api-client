@@ -4,7 +4,7 @@ VKontakte API Client for PHP
 ##Installation
 
 
-If you're usage <a href="https://getcomposer.org/">Composer</a>, which remmendation add record in your <b>composer.json</b> file
+If you're usage <a href="https://getcomposer.org/">Composer</a>, which we recommend, add record in your <b>composer.json</b> file
 
 ```
 {
