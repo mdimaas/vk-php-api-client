@@ -1,0 +1,15 @@
+{
+    "name": "deliciousdishes/vk-api-client",
+    "description": "VK API Client for PHP",
+    "homepage": "https://github.com/mdimaas/vk-php-api-client",
+    "keywords": ["vk", "api"],
+    "type": "library",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "DeliciousDishes\\": "src/deliciousdishes/"
+        }
+    }
+}
