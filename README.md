@@ -25,4 +25,6 @@ If you're usage <a href="https://getcomposer.org/">Composer</a>, which we recomm
 }
 ```
 
+##Example usage
 
+To be continued...
