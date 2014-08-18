@@ -15,7 +15,7 @@ class VKRequestSender
 
     private function init()
     {
-        $curl = curl_init();
+        $this->curl = curl_init();
     }
 
     private function setOption($key, $value)
@@ -35,7 +35,9 @@ class VKRequestSender
             CURLOPT_CONNECTTIMEOUT => 10,
             CURLOPT_TIMEOUT => 60,
             CURLOPT_RETURNTRANSFER => true, // Follow 301 redirects
-            CURLOPT_HEADER => true, // Enable header processing
+            CURLOPT_HEADER => false,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false
         );
         self::init();
         self::setOptions($options);

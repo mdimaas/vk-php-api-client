@@ -18,7 +18,7 @@ class VKLoginHelper
     private $clientId;
     private $clientSecret;
 
-    function __construct($redirectUrl, $clientId, $clientSecret, $scope = null)
+    function __construct($redirectUrl, $clientId, $clientSecret, $scope = array())
     {
         $this->redirectUrl = $redirectUrl;
         $this->clientId = $clientId;
@@ -31,15 +31,16 @@ class VKLoginHelper
         return (isset($_GET["code"]) ? $_GET["code"] : null);
     }
 
-    public function getSession()
+    public function getSession($code = null)
     {
         $params = array(
-            "code" => $this->getCode(),
+            "code" => isset($code) ? $code : $this->getCode(),
             "client_secret" => $this->clientSecret,
             "client_id" => $this->clientId,
-            "redirect_uri" => $this->redirectUrl
+            "redirect_uri" => $this->redirectUrl,
+//                "scope" => $this->scope
         );
-        $result = (new VKRequest(null, $params, "GET", self::AUTH_URL))->execute();
+        $result = (new VKRequest(VKRequest::newSession($this->clientId, $this->clientSecret), null, $params, "GET", VKRequest::ACCESS_TOKEN_URL))->execute()->getResponseData();
         if (isset($result->access_token)) {
             return new VKSession($result->access_token, $result->user_id, $result->expires_in);
         }
@@ -48,8 +49,9 @@ class VKLoginHelper
 
     public function getLoginUrl()
     {
-        return static::AUTH_URL . "client_id={$this->clientId}&redirect_uri={$this->redirectUrl}&response_type=code&v="
-        . VKRequest::VERSION . "&scope={$this->scope}";
+        $scope = implode(",", $this->scope);
+        return static::AUTH_URL . "?client_id={$this->clientId}&redirect_uri={$this->redirectUrl}&response_type=code&v="
+        . VKRequest::VERSION . "&scope={$scope}";
     }
 
 } 

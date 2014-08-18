@@ -20,5 +20,39 @@ class VKResponse {
         $this->responseData = $responseData;
     }
 
+    /**
+     * @param mixed $request
+     */
+    public function setRequest($request)
+    {
+        $this->request = $request;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * @param mixed $responseData
+     */
+    public function setResponseData($responseData)
+    {
+        $this->responseData = $responseData;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResponseData()
+    {
+        return $this->responseData;
+    }
+
+
+
 
 } 
