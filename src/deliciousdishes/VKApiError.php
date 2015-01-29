@@ -1,6 +1,5 @@
 <?php
 /**
- * Created by IntelliJ IDEA.
  * User: Dmitriy Moisseyenko
  * Date: 13.08.14
  * Time: 14:17

@@ -1,6 +1,5 @@
 <?php
 /**
- * Created by IntelliJ IDEA.
  * User: Dmitriy Moisseyenko
  * Date: 12.08.14
  * Time: 10:08
@@ -38,7 +37,6 @@ class VKLoginHelper
             "client_secret" => $this->clientSecret,
             "client_id" => $this->clientId,
             "redirect_uri" => $this->redirectUrl,
-//                "scope" => $this->scope
         );
         $result = (new VKRequest(VKRequest::newSession($this->clientId, $this->clientSecret), null, $params, "GET", VKRequest::ACCESS_TOKEN_URL))->execute()->getResponseData();
         if (isset($result->access_token)) {
