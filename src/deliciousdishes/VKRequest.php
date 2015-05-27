@@ -10,7 +10,6 @@ namespace DeliciousDishes;
 
 class VKRequest
 {
-
     const VERSION = "5.24";
     const BASE_URL = "https://api.vk.com/method/";
     const ACCESS_TOKEN_URL = "https://oauth.vk.com/access_token";

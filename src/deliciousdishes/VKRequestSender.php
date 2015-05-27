@@ -27,7 +27,7 @@ class VKRequestSender
         curl_setopt_array($this->curl, $options);
     }
 
-    private function openConnecion($url, $method = "GET", $params = array())
+    private function openConnection($url, $method = "GET", $params = array())
     {
         $options = array(
             CURLOPT_URL => $url,
@@ -52,7 +52,7 @@ class VKRequestSender
 
     public function send($url, $method = "GET", $params = array())
     {
-        self::openConnecion($url, $method, $params);
+        self::openConnection($url, $method, $params);
         $result = self::sendRequest();
         self::closeConnection();
         return $result;

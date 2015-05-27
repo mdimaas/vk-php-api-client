@@ -16,7 +16,14 @@ class VKLoginHelper
     private $redirectUrl;
     private $clientId;
     private $clientSecret;
+	private $scope;
 
+	/**
+	 * @param string $redirectUrl
+	 * @param string $clientId - App ID
+	 * @param string $clientSecret App secret key
+	 * @param array $scope - array with needs permissions (@see https://vk.com/dev/permissions)
+	 */
     function __construct($redirectUrl, $clientId, $clientSecret, $scope = array())
     {
         $this->redirectUrl = $redirectUrl;
@@ -30,6 +37,13 @@ class VKLoginHelper
         return (isset($_GET["code"]) ? $_GET["code"] : null);
     }
 
+	/**
+	 * Get VK session by authorization code after click login click
+	 *
+	 * @param null $code
+	 * @return VKSession|null
+	 * @throws VKApiError return error authorization in VK
+	 */
     public function getSession($code = null)
     {
         $params = array(
