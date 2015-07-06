@@ -1,3 +1,5 @@
+[![Dependency Status](https://www.versioneye.com/user/projects/559a5faa61663400210000ef/badge.svg?style=flat)](https://www.versioneye.com/user/projects/559a5faa61663400210000ef)
+
 VKontakte API Client for PHP
 =================
 
