@@ -4,6 +4,13 @@
     "homepage": "https://github.com/mdimaas/vk-php-api-client",
     "keywords": ["vk", "api"],
     "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitriy Moisseyenko",
+            "email": "mdimaas@gmail.com"
+        }
+    ],
     "require": {
         "php": ">=5.3.3"
     },
